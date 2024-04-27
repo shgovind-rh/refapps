@@ -1,4 +1,0 @@
-APP=nodejs18-hw
-REGISTRY=image-registry.openshift-image-registry.svc:5000/ref-apps
-SRC_GIT_REPO_URL=https://github.com/shgovind-rh/refapps.git
-FROM_BASE_IMAGE=registry.access.redhat.com/ubi9/nodejs-18:latest
