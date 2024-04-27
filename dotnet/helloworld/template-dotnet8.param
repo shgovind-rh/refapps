@@ -1,0 +1,5 @@
+APP=dotnet8-hw
+REGISTRY=image-registry.openshift-image-registry.svc:5000/ref-apps
+SRC_GIT_REPO_URL=https://github.com/shgovind-rh/refapps.git
+SRC_GIT_REPO_BRANCH=dotnet8
+FROM_BASE_IMAGE=registry.access.redhat.com/ubi8/dotnet-80:8.0

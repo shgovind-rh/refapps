@@ -18,6 +18,7 @@ objects:
       contextDir: dotnet/helloworld
       git:
         uri: ${SRC_GIT_REPO_URL}
+        ref: ${SRC_GIT_REPO_BRANCH}
       type: Git
     strategy:
       sourceStrategy:
@@ -106,6 +107,10 @@ parameters:
 - name: SRC_GIT_REPO_URL
   displayName: Git Repository
   description: Git Repository url for the source code
+  required: true  
+- name: ${SRC_GIT_REPO_BRANCH}
+  displayName: Git Repository Branch
+  description: Git Repository Branch for the source code
   required: true  
 - name: FROM_BASE_IMAGE
   displayName: Builder Base Image
