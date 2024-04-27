@@ -69,6 +69,9 @@ objects:
   kind: Service
   metadata:
     name: ${APP}
+    labels:
+      app: ${APP}    
+
   spec:
     ports:
     - name: 8080-tcp
@@ -77,6 +80,20 @@ objects:
       targetPort: 8080
     selector:
       app: ${APP}
+- apiVersion: route.openshift.io/v1      
+  kind: Route
+  metadata:
+    name: ${APP}
+    labels:
+      app: ${APP}    
+  spec:
+    to:
+      kind: Service
+      name: ${APP}
+      weight: 100
+    port:
+      targetPort: 8080-tcp
+    wildcardPolicy: None      
 parameters:
 - name: APP
   displayName: Application Name 
