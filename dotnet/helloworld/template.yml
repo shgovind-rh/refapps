@@ -108,7 +108,7 @@ parameters:
   displayName: Git Repository
   description: Git Repository url for the source code
   required: true  
-- name: ${SRC_GIT_REPO_BRANCH}
+- name: SRC_GIT_REPO_BRANCH
   displayName: Git Repository Branch
   description: Git Repository Branch for the source code
   required: true  
