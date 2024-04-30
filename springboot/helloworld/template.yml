@@ -1,7 +1,7 @@
 apiVersion: template.openshift.io/v1
 kind: Template
 metadata:
-  name: nodejs-hello-world
+  name: springboot-hello-world
 objects:
 - apiVersion: build.openshift.io/v1
   kind: BuildConfig
@@ -15,7 +15,7 @@ objects:
         kind: DockerImage
         name: ${REGISTRY}/${APP}:latest
     source:
-      contextDir: nodejs/helloworld
+      contextDir: springboot/helloworld
       git:
         uri: ${SRC_GIT_REPO_URL}
       type: Git
@@ -55,7 +55,7 @@ objects:
           imagePullPolicy: Always
           name: ${APP}
           ports:
-          - containerPort: 5000
+          - containerPort: 8080
             protocol: TCP
           resources: {}
           terminationMessagePath: /dev/termination-log
@@ -76,7 +76,7 @@ objects:
     - name: 8080-tcp
       port: 8080
       protocol: TCP
-      targetPort: 5000
+      targetPort: 8080
     selector:
       app: ${APP}
 - apiVersion: route.openshift.io/v1      
